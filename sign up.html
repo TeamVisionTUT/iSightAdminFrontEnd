@@ -85,15 +85,43 @@
 									Identity Number:
 								</td>
 								<td>
-									<br/><input type="text" name="id_number" size="25" pattern="[0-9]{13}$" required title = "please enter 13 numbers" placeholder="Enter your Identity number" />
+									<br/><input type="text" id="id_number" size="25" pattern="[0-9]{13}$" required title = "please enter 13 numbers" placeholder="Enter your Identity number" />
 								</td>
+							</tr>
+							
+							<tr>
+								<td><br/>
+									Gender:
+								</td>
+								<td>
+										<input type="radio" name="gender" value="male" onclick="myFunction()" checked>   Gender
+								</td>
+			
+							</tr>
+							<tr>
+							<td>
+							
+							</td>
+							
+								<td>
+									<p id="demo" ></p>
+								</td>
+								<script>
+									function myFunction() {
+										var id_number, voteable;
+										id_number = document.getElementById("id_number").value;
+										voteable = (id_number.substring(6,10) < 5000) ? "Female":"Male";
+										document.getElementById("demo").innerHTML = voteable;
+									}
+								</script>
+							
 							</tr>
 							<tr>
 								<td><br/>
 									Contact Number:
 								</td>
 								<td>
-									<br/><input type="text" name="phone" size="15"  pattern="^\d{3}\d{3}\d{4}$" title="please enter 10 numbers starting with 0 e.g 0791234567" placeholder="Enter your contact number" />
+									<br/><input type="text" name="phone" size="25"  pattern="^\d{3}\d{3}\d{4}$" title="please enter 10 numbers starting with 0 e.g 0791234567" placeholder="Enter your contact number" />
 								</td>
 							</tr>
 							<tr>
@@ -101,7 +129,7 @@
 									Email:
 								</td>
 								<td>
-									<br/><input type="text" size="18" name="user_id" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" required title="please enter email in the following format: me@example.com" "placeholder="me@example.com" />
+									<br/><input type="text" size="25" name="user_id" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" required title="please enter email in the following format: me@example.com" "placeholder="me@example.com" />
 								</td>
 							</tr>
 							<tr>
@@ -110,7 +138,7 @@
 								</td>
 								<td>
 									<br/><input type="password" name="password" id ='password'size="45" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" placeholder="Enter your password"/>
-									<button type="button" onclick="if(password.type == 'text') password.type = 'password'; else password.type = 'text';">Show</button>
+									<!-- <button type="button" onclick="if(password.type == 'text') password.type = 'password'; else password.type = 'text';">Show</button> -->
 								</td>
 							<tr>
 								<td><br/>
@@ -126,7 +154,7 @@
 								</td>
 								<td><br/>
 									<input type="submit" name="btnSubmit" value="SUBMIT"/>
-									<button type="reset" name="btnReset" class="cancelbtn">Reset</button>
+									<button type="reset" name="btnReset" class="cancelbtn"><a href="password reset.html">Reset</a></button>
 									<p>Already registered? <a href="sign in.html">Click here!</a></p>
 								</td>
 							</tr>
